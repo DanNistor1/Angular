@@ -1,0 +1,39 @@
+<mat-card style="background-color: #ffe6ff;">
+<h2>Hello</h2>
+
+<mat-list>
+    <mat-list-item>
+        <button mat-stroked-button [routerLink]="['/', appRoutesNames.TYPESCRIPT]">Typescript</button>
+    </mat-list-item>
+    <mat-list-item>
+        <button mat-stroked-button [routerLink]="['/', appRoutesNames.DATA_BINDING]">Data binding</button>
+    </mat-list-item>
+    <mat-list-item>
+        <button mat-stroked-button [routerLink]="['/', appRoutesNames.EVENT_BINDING]">Event binding</button>
+    </mat-list-item>
+    <mat-list-item>
+        <button mat-stroked-button [routerLink]="['/', appRoutesNames.BUILT_IN_DIRECTIVES]">Built-in directives</button>
+    </mat-list-item>
+    <mat-list-item>
+        <button mat-stroked-button [routerLink]="['/', appRoutesNames.PIPES]">Pipes</button>
+    </mat-list-item>
+    <mat-list-item>
+        <button mat-stroked-button [routerLink]="['/', appRoutesNames.COMPONENT_INTERACTION]">Component interaction</button>
+    </mat-list-item>
+    <mat-list-item>
+        <button mat-stroked-button [routerLink]="['/', appRoutesNames.FORMS]">Forms</button>
+    </mat-list-item>
+    <mat-list-item>
+        <button mat-stroked-button [routerLink]="['/', appRoutesNames.NOTIFICATIONS]">Notifications</button>
+    </mat-list-item>
+    <mat-list-item>
+        <button mat-stroked-button [routerLink]="['/', appRoutesNames.CRUD]">CRUD</button>
+    </mat-list-item>
+</mat-list>
+</mat-card>
+
+<div>
+    <router-outlet></router-outlet>
+</div>
+
+<!-- <app-typescript></app-typescript> -->

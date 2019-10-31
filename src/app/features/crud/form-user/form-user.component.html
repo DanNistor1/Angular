@@ -1,0 +1,57 @@
+<form novalidate [formGroup]="registrationForm">
+
+    <mat-form-field>
+        <input matInput placeholder="ID" formControlName="id" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="First name" formControlName="firstName" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Last name" formControlName="lastName" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email" type="email">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Password" formControlName="password" type="password">
+    </mat-form-field>
+
+    <button mat-raised-button color="basic" (click)="onCancel()">Cancel</button>
+
+    <mat-card style="background-color: #ffffe6;">
+        <div class="button-row">
+            <button mat-raised-button color="primary" (click)="getUsers()">List users</button>
+            <button mat-raised-button color="primary" (click)="getUserById(registrationForm.value.id)">List
+                user</button>
+            <button mat-raised-button color="primary" (click)="addUser(registrationForm.value)">Add user</button>
+            <button mat-raised-button color="primary"
+                (click)="updateUserById(registrationForm.value.id, registrationForm.value)">Update user</button>
+            <button mat-raised-button color="primary" (click)="deleteUserById(registrationForm.value.id)">Delete
+                user</button>
+            <button mat-raised-button color="warn" (click)="clear()">Clear users list</button>
+        </div>
+    </mat-card>
+
+    <div [hidden]='flag1'>
+        <mat-card *ngIf="users" style="background-color: #ffe6ff;">
+            <h3>Users list:</h3>
+            <ul *ngFor="let user of users">
+                <li><b>{{ user.id }} {{ user.firstName }} {{ user.lastName }}</b></li>
+            </ul>
+        </mat-card>
+    </div>
+
+    <div [hidden]='flag2'>
+    <mat-card *ngIf="users" style="background-color: #ffe6ff;">
+        <h3>User:</h3>
+        <ul>
+            <li><b>{{ user.id }} {{ user.firstName }} {{ user.lastName }}</b></li>
+        </ul>
+    </mat-card>
+    </div>
+
+</form>
